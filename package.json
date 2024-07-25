@@ -1,0 +1,17 @@
+{
+  "name": "to-do_list",
+  "version": "1.0.0",
+  "description": "PVM with NestJS + Firebase + Rect + Tailwind +  NextUI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "front": "cd apps/to-do-list && npm run dev",
+    "back": "cd apps/back && npm run start:dev"
+  },
+  "keywords": [],
+  "workspaces": [
+    "apps/*"
+  ],
+  "author": "Deivis Torres Mena",
+  "license": "ISC"
+}
