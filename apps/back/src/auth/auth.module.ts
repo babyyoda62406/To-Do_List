@@ -6,7 +6,8 @@ import { AuthController } from './auth.controller';
 
 @Module({
   providers: [AuthService, FirebaseService, JwtStrategy],
-  controllers: [AuthController]
+  controllers: [AuthController],
+  exports: [AuthService, FirebaseService, JwtStrategy],
 })
 export class AuthModule {
 
