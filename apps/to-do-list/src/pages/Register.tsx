@@ -6,6 +6,7 @@ import { GlobalContext } from "../contexts/GlobalContext/GobalContext";
 import { ColorRing } from 'react-loader-spinner'
 import { useNavigate } from "react-router-dom";
 
+import logo from '../assets/logo/todo-icon-2048x2048-pij2pwiy.png'
 
 const Register = () => {
 
@@ -62,16 +63,22 @@ const Register = () => {
 
     return <>
 
-        <div className="w-full h-screen flex justify-center items-center ">
-            <div className="w-fit h-fit">
-                <form className="border p-2 rounded-md  text-slate-800 text-xl" onSubmit={handlerSubmit} action="#">
-                    <div className="w-full grid grid-cols-1 gap-1">
-                        <label htmlFor="email">Correo Electrónico</label>
-                        <input type="email" name="email" id="ipt-correo" className="w-full p-1  border-b border-b-slate-700 outline-none" placeholder="my@email.com" required onChange={handlerChange} />
+        <div className="w-full h-screen flex justify-center items-center bg-c4">
+            <div className="w-fit h-fit bg-c3 flex flex-col p-4 rounded-md">
+                <div className="text-4xl text-c5 font-bold mb-3 flex flex-row justify-between items-center">
+                    <div className="text-c6">
+                        To Do List 
                     </div>
-                    <div className="w-full grid grid-cols-1 gap-1">
-                        <label htmlFor="password">Contraseña</label>
-                        <input type="password" name="password" id="ipt-contraseña" placeholder="********" className="w-full p-1  border-b border-b-slate-700 outline-none" required onChange={handlerChange} />
+                    <img src={logo} alt="logo" className="w-10 h-10" />
+                </div>
+                <form className="text-c5 text-2xl" onSubmit={handlerSubmit} action="#">
+                    <div className="w-full grid grid-cols-1 gap-0">
+                        <label htmlFor="email" className="font-semibold">Correo</label>
+                        <input type="email" name="email" id="ipt-correo" className="w-full p-1 bg-c3  border-b border-b-c5 outline-none" placeholder="my@email.com" required onChange={handlerChange} />
+                    </div>
+                    <div className="w-full grid grid-cols-1 gap-0 mt-3">
+                        <label htmlFor="password" className="font-semibold">Contraseña</label>
+                        <input type="password" name="password" id="ipt-contraseña" placeholder="********" className="w-full p-1  bg-c3 border-b border-b-c5 outline-none" required onChange={handlerChange} />
                     </div>
                     <div className="w-full flex justify-between gap-2 my-2">
 
@@ -82,14 +89,14 @@ const Register = () => {
                             ariaLabel="color-ring-loading"
                             wrapperStyle={{}}
                             wrapperClass="color-ring-wrapper"
-                            colors={['#ffffff', '#ffffff',  '#ffffff', '#ffffff', '#ffffff']}
+                            colors={['#333552' , '#333552', '#333552', '#333552', '#333552']}
                         />
-                            : <button className=" text-slate-800 p-2 rounded-md border" type="submit">
+                            : <button className=" bg-c6/75 hover:bg-c6 active:bg-c6/55 text-c5 font-semibold p-2 rounded-md " type="submit">
                                 Registrarse
                             </button>}
                         <div className="flex flex-row gap-2 items-center">
-                            <span className="text-slate-300">¿Ya tienes cuenta?</span>
-                            <span  className="text-slate-400 underline cursor-pointer" onClick={() => navHandler('/login')}>Iniciar Sesión</span>
+                            <span className="text-c5/45">¿Ya tienes cuenta?</span>
+                            <span  className="text-c5/75 hover:text-c5 underline cursor-pointer" onClick={() => navHandler('/login')}>Iniciar Sesión</span>
                         </div>
                     </div>
                 </form>

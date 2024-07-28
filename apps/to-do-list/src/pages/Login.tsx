@@ -70,7 +70,7 @@ const Login = () => {
     <div className="w-full h-screen flex justify-center items-center bg-c4">
       <div className="w-fit h-fit bg-c3 flex flex-col p-4 rounded-md">
         <div className="text-4xl text-c5 font-bold mb-3 flex flex-row justify-between items-center">
-          <div className="text-c6">
+          <div className="text-c6 ">
             To Do List
           </div>
           <img src={logo} alt="logo" className="w-10 h-10" />
@@ -93,7 +93,7 @@ const Login = () => {
               ariaLabel="color-ring-loading"
               wrapperStyle={{}}
               wrapperClass="color-ring-wrapper"
-              colors={['#32a4be', '#32a4be', '#32a4be', '#32a4be', '#32a4be']}
+              colors={['#333552' , '#333552', '#333552', '#333552', '#333552']}
             />
               : <button className="font-semibold text-c5 bg-c6/75  p-2 rounded-md text-2xl  hover:bg-c6  active:bg-c6/50   " type="submit">
                 Entrar
