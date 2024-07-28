@@ -7,6 +7,7 @@ import { TaskBoxProps } from "../components/TaskBox";
 import LyTasks from "../layouts/LyTasks";
 import { GetAllTask } from "../services/Task/GetAllTask";
 import { GlobalContext } from "../contexts/GlobalContext/GobalContext";
+import Footer from "../components/Footer";
 
 const Home = () => {
   const navHandler = useNavigate();
@@ -34,10 +35,10 @@ const Home = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  return <div className="w-fit h-screen flex flex-col bg-c2 border-r border-l border-c1/55 border-dashed">
+  return <div className="relative w-fit h-screen flex flex-col bg-c2 border-r border-l border-c1/55 border-dashed">
     <Navbar userEmail={user?.user.email ?? 'Anónimo '} />
     <LyTasks items={tasks} />
-    
+    <Footer />
   </div>
 }
 

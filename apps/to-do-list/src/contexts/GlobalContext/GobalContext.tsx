@@ -1,6 +1,6 @@
-import React, { FC, createContext } from "react";
+import React, { FC, createContext, useState } from "react";
 
-import { tpGlobalContext } from "../../types/tpContexts";
+import { tpGlobalContext, tpGlobalContextStatus } from "../../types/tpContexts";
 import { itUser } from "../../interfaces/itUser";
 import { auth } from "../../services/firebase";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, UserCredential } from "firebase/auth";
@@ -18,8 +18,11 @@ const defaultValues: tpGlobalContext = {
     },
     clearCredentials: () => {
         throw new Error('clearCredentials no implementado')
+    },
+    appStatus: "Loading",
+    setGlobalStatus: () => {
+        throw new Error('setGlobalStatus no implementado')
     }
-    
 }
 
 export const GlobalContext = createContext<tpGlobalContext>(defaultValues)
@@ -37,12 +40,16 @@ export const GlobalContextProvider: FC<{ children: React.ReactNode }> = ({ child
         sessionStorage.removeItem('userToken')
     }
 
+    const [appStatus, setAppStatus] = useState<tpGlobalContextStatus>("Loading")
+
     return <GlobalContext.Provider
         value={{
             signUp,
             signIn, 
             saveCredentials,
-            clearCredentials
+            clearCredentials, 
+            appStatus,
+            setGlobalStatus: (status: tpGlobalContextStatus) => setAppStatus(status)
         }}
     >
         {children}
