@@ -6,8 +6,12 @@ import { Logger } from '@nestjs/common';
 async function bootstrap() {
   const logger = new Logger('app.module'); 
   const app = await NestFactory.create(AppModule);
+  app.enableCors();
+
   const globalPrefix = 'api/v1';
   app.setGlobalPrefix(globalPrefix);
+
+
   await app.listen(envVars.PORT);
   logger.log(`Server is running on port ${envVars.PORT}`);
 }
