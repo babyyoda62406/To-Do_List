@@ -1,6 +1,5 @@
 import { base_url } from "../../config/urls";
 
-
 export const GetAllTask = async () => {
     const userToken  = sessionStorage.getItem('userToken') 
     
@@ -11,9 +10,11 @@ export const GetAllTask = async () => {
             'authorization': `${userToken}`  
         },
     });    
-    if (response.ok) {
-        const data = await response.json();
-        return data;
-    }   
+    switch (response.status) {
+        case 200:
+            return response.json();
+        default:
+            return response.status;
+    } 
     
 }

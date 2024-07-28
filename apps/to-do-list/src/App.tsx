@@ -5,7 +5,7 @@ import { ToastContainer } from 'react-toastify';
 import Home from './pages/Home';
 
 const App = () => {
-  return <div className="w-full">
+  return <div className="w-full flex justify-center bg-c2">
     <ToastContainer />
     {/* Routes with react-router-dom */}
     
