@@ -37,8 +37,8 @@ export class TaskService {
     if(!tasks.docs.length) throw new HttpException('No tasks found', HttpStatus.NO_CONTENT)
 
     return tasks.docs.map(doc => {
-     const {title} =  doc.data() as Task
-     return { id: doc.id, title }
+     const {title, description, status, createdAt} =  doc.data() as Task
+     return { id: doc.id, title , description, status, createdAt }
     })
     
   }

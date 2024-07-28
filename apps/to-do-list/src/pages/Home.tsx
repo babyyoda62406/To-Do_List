@@ -24,7 +24,8 @@ const Home = () => {
     else{
         setUser(JSON.parse(sessionStorage.getItem('userCredentials') as string))
     }
-    getAllTask()
+    // FIXME:  get all tasks
+    getAllTask;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
