@@ -42,7 +42,6 @@ export const TaskBox: React.FC<TaskBoxProps> = ({ title, description, status, cr
                 {firebaseTimeStampToDate(createdAt)}
             </div>
         </div>
-
     </div>
 }
 

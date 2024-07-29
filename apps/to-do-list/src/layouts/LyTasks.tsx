@@ -1,13 +1,13 @@
 import { TiCancel } from "react-icons/ti";
 import TaskBox, { TaskBoxProps } from "../components/TaskBox"
 import { FaCheck, FaRegClipboard } from "react-icons/fa";
+import logo from '../assets/logo/todo-icon-2048x2048-pij2pwiy.png'
+import TaskBoxSkeleton from '../components/TaskBoxSkeleton';
 
 interface LyTasksProps {
   items: TaskBoxProps[];
 }
 
-
-import logo from '../assets/logo/todo-icon-2048x2048-pij2pwiy.png'
 
 const LyTasks: React.FC<LyTasksProps> = ({ items }) => {
 
@@ -32,6 +32,7 @@ const LyTasks: React.FC<LyTasksProps> = ({ items }) => {
           Listo
         </div>
       </div>
+      <TaskBoxSkeleton taskBox={<TaskBox  {...items[0]} />} />
       <div className=" w-full flex flex-col gap-0 h-auto  px-4 py-2 rounded-md max-h-[80vh] overflow-y-auto  ">
         {items.map((item, index) => item.status === 'done' ? <TaskBox key={index} {...item} /> : null)}
       </div>
@@ -45,7 +46,7 @@ const LyTasks: React.FC<LyTasksProps> = ({ items }) => {
         </div>
       </div>
       <div className=" w-full flex flex-col gap-0 h-auto  px-4 py-2 rounded-md max-h-[80vh] overflow-y-auto  ">
-        {items.map((item, index) => item.status === 'pending' ? <TaskBox key={index} {...item} /> : null)}
+        {items.map((item, index) => item.status === 'canceled' ? <TaskBox key={index} {...item} /> : null)}
       </div>
     </div>
 
