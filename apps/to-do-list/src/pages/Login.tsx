@@ -56,6 +56,9 @@ const Login = () => {
         case 'auth/user-disabled':
           toast.error('Usuario deshabilitado')
           break;
+        case "auth/network-request-failed":
+          toast.error('Error en la conexión')
+          break;
         default:
           toast.error(error.code)
           break;

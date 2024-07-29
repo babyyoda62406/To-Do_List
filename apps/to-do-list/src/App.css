@@ -1,0 +1,22 @@
+/* Estilo para la barra de desplazamiento */
+::-webkit-scrollbar {
+    width: 12px; /* Ancho de la barra de desplazamiento */
+  }
+  
+  /* Estilo para el "track" (fondo) de la barra de desplazamiento */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color de fondo */
+    border-radius: 10px; /* Bordes redondeados */
+  }
+  
+  /* Estilo para el "thumb" (el indicador de desplazamiento) */
+  ::-webkit-scrollbar-thumb {
+    background: #888; /* Color del indicador */
+    border-radius: 10px; /* Bordes redondeados */
+  }
+  
+  /* Estilo para el "thumb" en estado hover (cuando el usuario pasa el cursor por encima) */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color más oscuro al pasar el cursor */
+  }
+  

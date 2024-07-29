@@ -17,7 +17,7 @@ const Navbar: FC<NavbarProps> = ({ userEmail }) => {
     clearCredentials()
     navHandler('/login')
   }
-  return <div className="w-full h-auto flex items-center justify-between p-3  bg-c5" >
+  return <div className="w-full h-auto flex items-center justify-between p-3  bg-c5 border-b border-white/20"  >
     <div className="flex flex-row items-center gap-2">
       <h1 className="text-3xl font-bold text-c6">To Do List</h1>
     </div>

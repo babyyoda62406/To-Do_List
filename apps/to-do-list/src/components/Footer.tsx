@@ -36,7 +36,7 @@ const Footer = () => {
         }
     }
 
-    return <div className="flex flex-row justify-between items-center w-full h-fit absolute bottom-0 bg-c5 p-2">
+    return <div className="flex flex-row justify-between items-center w-full  bg-c5 p-2 border-t border-white/20 ">
         <div className="text-3xl text-c6 font-bold">
             <p>Estado:</p>
         </div>

@@ -3,6 +3,7 @@ import Login from "./pages/Login";
 import Register from './pages/Register';
 import { ToastContainer } from 'react-toastify';
 import Home from './pages/Home';
+import './App.css';
 
 const App = () => {
   return <div className="w-full flex justify-center bg-c2">

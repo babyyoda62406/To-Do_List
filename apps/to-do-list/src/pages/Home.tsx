@@ -8,20 +8,23 @@ import LyTasks from "../layouts/LyTasks";
 import { GetAllTask } from "../services/Task/GetAllTask";
 import { GlobalContext } from "../contexts/GlobalContext/GobalContext";
 import Footer from "../components/Footer";
+import LyAdd from '../layouts/LyAdd';
 
 const Home = () => {
   const navHandler = useNavigate();
-  const {clearCredentials} = useContext(GlobalContext)
+  const { clearCredentials } = useContext(GlobalContext)
   const [user, setUser] = useState<UserCredential>()
   const [tasks, setTasks] = useState<TaskBoxProps[]>([])
+  const { setGlobalStatus } = useContext(GlobalContext)
 
   const getAllTask = async () => {
-    const tasks = await GetAllTask() ?? [] 
-    if(tasks === 401) {
+    const tasks = await GetAllTask() ?? []
+    if (tasks === 401) {
       clearCredentials()
       navHandler('/login')
     }
     setTasks(tasks)
+    setGlobalStatus("Online")
   }
 
   useEffect(() => {
@@ -38,7 +41,11 @@ const Home = () => {
   return <div className="relative w-fit h-screen flex flex-col bg-c2 border-r border-l border-c1/55 border-dashed">
     <Navbar userEmail={user?.user.email ?? 'Anónimo '} />
     <LyTasks items={tasks} />
-    <Footer />
+
+    <div className="flex flex-col justify-center items-center w-full h-fit  absolute bottom-0">
+      <LyAdd update={getAllTask} />
+      <Footer />
+    </div>
   </div>
 }
 

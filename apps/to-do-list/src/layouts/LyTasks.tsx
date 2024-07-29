@@ -11,8 +11,8 @@ import logo from '../assets/logo/todo-icon-2048x2048-pij2pwiy.png'
 
 const LyTasks: React.FC<LyTasksProps> = ({ items }) => {
   
-  return items.length > 0 ? <div className="w-full  h-auto flex flex-row items-start p-2  gap-2 bg-c2 ">
-    <div className="w-fit h-auto flex flex-col gap-0 border px-4 rounded-md bg-c3 min-w-[355px] ">
+  return items.length > 0 ? <div className="w-full  flex flex-row items-start p-2  gap-2  ">
+    <div className="w-fit h-auto flex flex-col gap-0 border px-4 rounded-md bg-c3 min-w-[355px] max-h-[85vh] overflow-y-auto ">
       <div className="flex flex-row items-center justify-between  mb-2 pb-2 mt-2 border-b border-c2">
         <FaRegClipboard className="text-c2  font-bold text-2xl " />
         <div className="text-c2  font-bold text-2xl ">
