@@ -11,6 +11,7 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { GlobalContext } from "../contexts/GlobalContext/GobalContext";
 
+
 interface LyAddProps {
     update: () => void
 }
@@ -118,6 +119,7 @@ const LyAdd: React.FC<LyAddProps> = ({ update }) => {
         <div className="p-2 rounded-md bg-c5/75 m-4 shadow shadow-white/40 cursor-pointer hover:bg-c5 active:bg-gray-800 " onClick={openModal}>
             <MdOutlineAddTask className="text-c6 text-5xl" />
         </div>
+        
     </div>
 }
 

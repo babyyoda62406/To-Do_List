@@ -13,7 +13,7 @@ const Footer = () => {
         switch (appStatus) {
             case "Loading":
                 return <div className="flex flex-row items-center gap-2">
-                    <p>Cargando...</p>
+                    <div>Cargando...</div>
                     <ColorRing
                         visible={true}
                         height="30"
@@ -32,18 +32,18 @@ const Footer = () => {
                     
                 </div>
             default:
-                return <p>Error</p>
+                return <div>Error</div>
         }
     }
 
     return <div className="flex flex-row justify-between items-center w-full  bg-c5 p-2 border-t border-white/20 ">
         <div className="text-3xl text-c6 font-bold">
-            <p>Estado:</p>
+            <div>Estado:</div>
         </div>
         <div className="text-3xl text-c6 font-bold">
-            <p>
+            <div>
                 {getHtmlStatus()}
-            </p>
+            </div>
         </div>
     </div>
 }

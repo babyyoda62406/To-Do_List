@@ -18,6 +18,7 @@ const Home = () => {
   const { setGlobalStatus } = useContext(GlobalContext)
 
   const getAllTask = async () => {
+    setGlobalStatus("Loading")
     const tasks = await GetAllTask() ?? []
     if (tasks === 401) {
       clearCredentials()
@@ -40,7 +41,7 @@ const Home = () => {
 
   return <div className="relative w-fit h-screen flex flex-col bg-c2 border-r border-l border-c1/55 border-dashed">
     <Navbar userEmail={user?.user.email ?? 'Anónimo '} />
-    <LyTasks items={tasks} />
+    <LyTasks items={tasks} update={getAllTask} />
 
     <div className="flex flex-col justify-center items-center w-full h-fit  absolute bottom-0">
       <LyAdd update={getAllTask} />
